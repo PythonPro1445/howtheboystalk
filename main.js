@@ -42,4 +42,20 @@ function change_password() {
   window.location.href = "changepassword.html";
 }
 
+// Request permission to show notifications
+Notification.requestPermission().then(function(permission) {
+  if (permission === "granted") {
+    // Create a new notification
+    var notification = new Notification("Hello, World!", {
+      body: "Welcome To How The Boys Talk!",
+      icon: "How The Boys Talk.png" // Replace with your own icon URL
+    });
+
+    // Handle click event on the notification
+    notification.onclick = function() {
+      // Perform an action when the notification is clicked
+      console.log("Notification clicked!");
+    };
+  }
+});
 
